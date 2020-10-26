@@ -104,4 +104,4 @@ dist
 .tern-port
 yarn.lock
 package-lock.json
-000-xyz/ts.md
+000-xyz/typescript-in-action/
