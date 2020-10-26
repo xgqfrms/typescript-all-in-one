@@ -23,8 +23,11 @@ $ npm init
 ## install
 
 ```sh
-# webpack
-$ yarn add -D webpack webpack-cli webpack-dev-server webpack-merge html-webpack-plugin clean-webpack-plugin
+# webpack (webpack 5.x & webpack-cli 4.x bug)
+# $ yarn add -D webpack webpack-cli webpack-dev-server webpack-merge html-webpack-plugin clean-webpack-plugin
+
+# webpack serve (webpack 5.x)
+$ yarn add -D webpack webpack-cli webpack-merge html-webpack-plugin clean-webpack-plugin
 
 # typescript
 $ yarn add -D typescript ts-loader
