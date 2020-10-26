@@ -39,4 +39,20 @@ $ yarn add -D typescript ts-loader
 ```sh
 $ tsc --init
 
-````
+```
+
+
+## dev / app
+
+```sh
+$ dev
+$ yarn dev
+$ npm run dev
+
+
+$ app
+$ yarn app
+$ npm run app
+
+```
+
