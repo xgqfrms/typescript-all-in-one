@@ -63,20 +63,28 @@ const enum Roles {
   Operator,
 }
 
-const timestamp = Date.now();
-// const timestamp = new Date().getTime();
-// 👍 computed enum ❌ tsconfig bug ???
-const enum Dynamic {
+// 👍 computed enum ❌ const bug
+// const enum DynamicConstBug {
+//   role = Roles.User,
+//   level = Level.A,
+//   time = Date.now(),
+//   timestamp = new Date().getTime(),
+//   random = Math.random(),
+//   value = 1 + 2,
+//   len = "123".length,
+// }
+// const enum member initializers can only contain literal values and other computed enum values.
+
+// 👍 computed enum ✅
+enum Dynamic {
   role = Roles.User,
   level = Level.A,
-  // time = Date.now(),
-  // time = new Date().getTime(),
-  // time = timestamp,
-  // time = Math.random(),
+  time = Date.now(),
+  timestamp = new Date().getTime(),
+  random = Math.random(),
   value = 1 + 2,
-  // len = "123".length,
+  len = "123".length,
 }
-// const enum member initializers can only contain literal values and other computed enum values.
 
 //number enum
 enum Direction {
