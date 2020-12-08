@@ -51,8 +51,28 @@ var Level;
     Level["B"] = "good";
     Level["C"] = "bad";
 })(Level || (Level = {}));
-var timestamp = Date.now();
+// 👍 computed enum ❌ const bug
+// const enum DynamicConstBug {
+//   role = Roles.User,
+//   level = Level.A,
+//   time = Date.now(),
+//   timestamp = new Date().getTime(),
+//   random = Math.random(),
+//   value = 1 + 2,
+//   len = "123".length,
+// }
 // const enum member initializers can only contain literal values and other computed enum values.
+// 👍 computed enum ✅
+var Dynamic;
+(function (Dynamic) {
+    Dynamic[Dynamic["role"] = 1] = "role";
+    Dynamic["level"] = "perfect";
+    Dynamic[Dynamic["time"] = Date.now()] = "time";
+    Dynamic[Dynamic["timestamp"] = new Date().getTime()] = "timestamp";
+    Dynamic[Dynamic["random"] = Math.random()] = "random";
+    Dynamic[Dynamic["value"] = 3] = "value";
+    Dynamic[Dynamic["len"] = "123".length] = "len";
+})(Dynamic || (Dynamic = {}));
 //number enum
 var Direction;
 (function (Direction) {
